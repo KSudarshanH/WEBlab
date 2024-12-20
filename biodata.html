@@ -1,0 +1,265 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title> Prathvi S Jathan - Personal Profile</title>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600;700&display=swap" rel="stylesheet">
+    <style>
+        :root {
+            --primary-color: #4a90e2;
+            --secondary-color: #34495e;
+            --accent-color: #2ecc71;
+            --text-color: #2c3e50;
+            --background-color: #ecf0f1;
+        }
+        
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            transition: all 0.3s ease;
+        }
+        
+        body {
+            font-family: 'Inter', sans-serif;
+            line-height: 1.7;
+            background-color: var(--background-color);
+            color: var(--text-color);
+        }
+        
+        .container {
+            max-width: 900px;
+            margin: 2rem auto;
+            padding: 0 20px;
+        }
+        
+        .profile-header {
+            background: linear-gradient(135deg, #4a90e2 0%, #34495e 100%);
+            color: white;
+            text-align: center;
+            padding: 3rem 2rem;
+            border-radius: 20px;
+            box-shadow: 0 15px 35px rgba(57, 136, 225, 0.3);
+            margin-bottom: 2rem;
+            transform: translateY(0);
+            transition: transform 0.3s ease;
+        }
+        
+        .profile-header:hover {
+            transform: translateY(-5px);
+        }
+        
+        .profile-header h1 {
+            font-size: 3em;
+            margin-bottom: 1rem;
+            letter-spacing: -1px;
+            text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.2);
+        }
+        
+        .profile-header p {
+            font-size: 1.2em;
+            opacity: 0.9;
+            letter-spacing: 1px;
+        }
+        
+        .profile-navigation {
+            display: flex;
+            justify-content: center;
+            gap: 2rem;
+            margin-bottom: 2rem;
+            flex-wrap: wrap;
+        }
+        
+        .profile-navigation a {
+            text-decoration: none;
+            color: var(--primary-color);
+            font-weight: 600;
+            padding: 0.5rem 1.5rem;
+            border-radius: 25px;
+            background-color: white;
+            box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1);
+        }
+        
+        .profile-navigation a:hover {
+            background-color: var(--primary-color);
+            color: white;
+            transform: translateY(-2px);
+        }
+        
+        .profile-section {
+            background-color: white;
+            border-radius: 20px;
+            padding: 2rem;
+            box-shadow: 0 10px 25px rgba(0, 0, 0, 0.08);
+            margin-bottom: 2rem;
+            transform: translateY(0);
+            transition: transform 0.3s ease;
+        }
+        
+        .profile-section:hover {
+            transform: translateY(-3px);
+        }
+        
+        .profile-section h2 {
+            color: var(--primary-color);
+            border-bottom: 2px solid var(--primary-color);
+            padding-bottom: 1rem;
+            margin-bottom: 2rem;
+            font-size: 1.8em;
+            position: relative;
+        }
+        
+        .profile-section h2::after {
+            content: '';
+            position: absolute;
+            bottom: -2px;
+            left: 0;
+            width: 50px;
+            height: 2px;
+            background-color: var(--accent-color);
+        }
+        
+        .profile-details {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 1.5rem;
+        }
+        
+        .profile-details .detail-item {
+            background-color: #f8fafc;
+            padding: 1.5rem;
+            border-radius: 15px;
+            display: flex;
+            align-items: center;
+            transition: all 0.3s ease;
+        }
+        
+        .profile-details .detail-item:hover {
+            background-color: #fff;
+            box-shadow: 0 8px 20px rgba(0, 0, 0, 0.1);
+            transform: translateY(-2px);
+        }
+        
+        .profile-details .detail-item .icon {
+            margin-right: 1rem;
+            color: var(--primary-color);
+            font-size: 1.5em;
+            width: 40px;
+            height: 40px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            background-color: rgba(74, 144, 226, 0.1);
+            border-radius: 50%;
+        }
+        
+        .hobbies {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 1rem;
+        }
+        
+        .hobby-tag {
+            background-color: var(--accent-color);
+            color: white;
+            padding: 0.7rem 1.5rem;
+            border-radius: 25px;
+            font-size: 0.95em;
+            letter-spacing: 0.5px;
+            box-shadow: 0 4px 15px rgba(46, 204, 113, 0.2);
+            transition: all 0.3s ease;
+        }
+        
+        .hobby-tag:hover {
+            transform: translateY(-2px);
+            box-shadow: 0 6px 20px rgba(46, 204, 113, 0.3);
+        }
+        
+        .profile-footer {
+            text-align: center;
+            padding: 2rem;
+            background-color: white;
+            border-radius: 15px;
+            box-shadow: 0 10px 25px rgba(0, 0, 0, 0.08);
+            color: var(--secondary-color);
+        }
+        
+        @media (max-width: 768px) {
+            .profile-details {
+                grid-template-columns: 1fr;
+            }
+            
+            .profile-header h1 {
+                font-size: 2.5em;
+            }
+            
+            .container {
+                margin: 1rem auto;
+            }
+        }
+    </style>
+</head>
+
+<body>
+    <div class="container">
+        <header class="profile-header">
+            <h1>Hi , I Am Prathvi S Jathan</h1>
+            <p>Software Developer | Ui/Ux designer</p>
+        </header>
+
+        <nav class="profile-navigation">
+            <a href="index.html">Home</a>
+            <a href="resume.html">Resume</a>
+        </nav>
+
+        <section class="profile-section">
+            <h2>Personal Details</h2>
+            <div class="profile-details">
+                <div class="detail-item">
+                    <div class="icon"></div>
+                    <div>
+                        <strong>Email</strong>
+                        <p>david@example.com</p>
+                    </div>
+                </div>
+                <div class="detail-item">
+                    <div class="icon"></div>
+                    <div>
+                        <strong>Phone</strong>
+                        <p>8431571020</p>
+                    </div>
+                </div>
+                <div class="detail-item">
+                    <div class="icon"></div>
+                    <div>
+                        <strong>Address</strong>
+                        <p>Bantakal, Vishvothama Nagar, Udupi</p>
+                    </div>
+                </div>
+                <div class="detail-item">
+                    <div class="icon"></div>
+                    <div>
+                        <strong>Age</strong>
+                        <p>20 Years</p>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <section class="profile-section">
+            <h2>Hobbies</h2>
+            <div class="hobbies">
+                <span class="hobby-tag">Cricket</span>
+                <span class="hobby-tag">Travelling</span>
+                <span class="hobby-tag">Gaming</span>
+            </div>
+        </section>
+
+        <footer class="profile-footer">
+            <p>&copy; 2024 Prathvi S Jathan. All rights reserved.</p>
+        </footer>
+    </div>
+</body>
+
+</html>
